@@ -34,7 +34,7 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(div(-20,-2), -10)
 
 
-
+## Partner 2
 
     def test_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
@@ -49,4 +49,12 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             logarithm(1, 10)  # base cannot be 1
 
+
+## Partner 1
+
+    def test_log_invalid_argument(self):
+        with self.assertRaises(ValueError):
+            logarithm(5, 0)
+
+    det
 
