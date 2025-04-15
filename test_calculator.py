@@ -56,5 +56,11 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             logarithm(5, 0)
 
-    det
+    def test_hypotenuse(self):
+        self.assertAlmostEqual(hypotenuse(3, 4), 5.0)
+        self.assertAlmostEqual(hypotenuse(5, 12), 13.0)
+        self.assertAlmostEqual(hypotenuse(0, 0), 0.0)
 
+
+if __name__ == "__main__":
+    unittest.main()
