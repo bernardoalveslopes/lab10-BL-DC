@@ -28,6 +28,7 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(mul(-2,2),4)
         self.assertEqual(mul(-10,-2),20)
 
+    def test_divide(self):
 
 
 
