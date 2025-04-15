@@ -10,6 +10,7 @@ from calculator import *
 
 class TestCalculator(unittest.TestCase):
 
+# partner 2
     def test_add(self):
         self.assertEqual(add(2, 3), 5)
         self.assertEqual(add(-1, 1), 0)
@@ -19,6 +20,18 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(subtract(10, 4), 6)
         self.assertEqual(subtract(0, 5), -5)
         self.assertEqual(subtract(-3, -3), 0)
+
+
+# partner 1
+    def test_multiply(self):
+        self.assertEqual(mul(4,4),16)
+        self.assertEqual(mul(-2,2),4)
+        self.assertEqual(mul(-10,-2),20)
+
+
+
+
+
 
     def test_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
@@ -32,4 +45,5 @@ class TestCalculator(unittest.TestCase):
     def test_log_invalid_base(self):
         with self.assertRaises(ValueError):
             logarithm(1, 10)  # base cannot be 1
+
 
