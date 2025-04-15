@@ -1,33 +1,34 @@
 import unittest
 from calculator import *
+#https://github.com/bernardoalveslopes/lab10-BL-DC
+# Partner 1: Bernardo Lopes
+# Partner 2: Darryl Culver
 
 import unittest
 from calculator import *
 
 class TestCalculator(unittest.TestCase):
 
-    # Partner 1
-    def test_multiply(self):
-        self.assertEqual(multiply(2, 2), 4)
-        self.assertEqual(multiply(-2, 2), -4)
-        self.assertEqual(multiply(-2, -2), 4)
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertEqual(add(0, 0), 0)
 
-    def test_divide(self):
-        self.assertEqual(divide(10, 2), 5)
-        self.assertEqual(divide(-10, 2), -5)
-        self.assertEqual(divide(0, 5), 0)
+    def test_subtract(self):
+        self.assertEqual(sub(10, 4), 6)
+        self.assertEqual(sub(0, 5), -5)
+        self.assertEqual(sub(-3, -3), 0)
 
-    def test_log_invalid_argument(self):
+    def test_divide_by_zero(self):
+        with self.assertRaises(ZeroDivisionError):
+            div(5, 0)
+
+    def test_logarithm(self):
+        self.assertAlmostEqual(log(2, 8), 3.0)
+        self.assertAlmostEqual(log(10, 1000), 3.0)
+        self.assertAlmostEqual(log(math.e, math.e**2), 2.0)
+
+    def test_log_invalid_base(self):
         with self.assertRaises(ValueError):
-            logarithm(2, -5)  # negative argument not allowed
+            log(1, 10)  # base cannot be 1
 
-    def test_hypotenuse(self):
-        self.assertAlmostEqual(hypotenuse(3, 4), 5.0)
-        self.assertAlmostEqual(hypotenuse(5, 12), 13.0)
-        self.assertAlmostEqual(hypotenuse(0, 0), 0.0)
-
-    def test_sqrt(self):
-        self.assertAlmostEqual(square_root(16), 4.0)
-        self.assertAlmostEqual(square_root(0), 0.0)
-        with self.assertRaises(ValueError):
-            square_root(-1)
